@@ -1,0 +1,23 @@
+body {
+  border: none;
+}
+
+.ui-tooltip {
+  background: grey;
+  display: inline-block;
+  padding: 20px;
+}
+
+button {
+  padding: 20px;
+  background: black;
+  color: white;
+  border: none;
+  transition: all 0.5s;
+}
+
+button:hover {
+  background: white;
+  color: black;
+
+}
