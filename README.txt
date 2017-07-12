@@ -1,3 +1,1 @@
-A Pen created at CodePen.io. You can find this one at http://codepen.io/davidnmora/pen/GmyEeX.
-
- 
+Flowcharts for Stanford Daily Data Vis team. Built on jquery and graph visualizing library Mermaid.js.
