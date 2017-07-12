@@ -40,11 +40,10 @@
 <!--       TITLE IX PROCESS -->
       <div class="card-panel mermaid">
 graph TD        
-        a[Affected Party reports incident directly to Title IX?]
-        b[Complainant requests disciplinary action?]
-        c[Investigation over Objection]
-        d[Informal Resolution]
-        e[Investigation]
+        a[How is the incident reported to Title IX?]
+        b[What does the Impacted Party request?]
+        d[Title IX conducts Informal Resolution]
+        e[Title IX conducts Formal Investigation]
 
         f1[No Charge]
         f2[Charged]
@@ -55,19 +54,23 @@ graph TD
         i[Findings of Responsibility]
         j[Either Party may appeal Outcome Letter]
 
-        l[If reported secondhand, Title IX contacts affected party]
-        m[Report noted, no further action taken]
+        l[Title IX contacts Impacted Party]
+        m[Report noted, no further action taken*]
 
-        a -- Yes --> b
-        a -- No --> l
-        b -.No.-> c
-        b -- No --> d
-        b -- Yes -->e
+        a -- Directly by Impacted Party --> b
+        a -- Secondhand --> l
+        b -- No action --> m
+        b -- Informal Resolution --> d
+        d -.Impacted Party Requests Formal Investigation.-> e
+        b -- Formal Investigation --> e
 
-        l -- Affected responds --> b
-        l -- No responce or denial --> m
-        l -.No responce or denial.-> c
-        c -.-> e
+        d -.Exceptional case.-> e
+
+        l -- Impacted Party confirms incident --> b
+        l -- Impacted Party doesn't respond --> m
+        l -- Impacted Party denies incident --> m
+        m -.*Exceptional case.-> e
+        
 
         e --> f1
         e --> f2
