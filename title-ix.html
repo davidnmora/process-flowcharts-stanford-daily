@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Flowchart - Processes, Daily Data Vis</title>
+      <link rel="stylesheet" href="css/style.css"> 
+</head>
+
+<body>
+  <head>
+   <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="msapplication-tap-highlight" content="no">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<!--   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css" /> -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <!-- <link rel='stylesheet' href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" /> -->
+<!--   <link href="https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.css" rel="stylesheet" /> -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.dark.css" rel="stylesheet" />
+<!--   <link href="https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.forest.css" rel="stylesheet"/> -->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaid.slim.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaidAPI.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/6.0.0/mermaidAPI.slim.js"></script>
+
+  <!-- tooltips -->
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+
+</head>
+<body>
+  <button id="show-complainant">Highlight complainant's involvement</button>
+  <button id="show-accused">Highlight accused party's involvement</button>
+  <div class='row'>
+    <div class="col s6">
+
+<!--       TITLE IX PROCESS -->
+      <div class="card-panel mermaid">
+graph TD        
+        a[Complainant reports incident directly to Title IX]
+        b[Complainant requests disciplinary action?]
+        c[Investigation over Objection]
+        d[Informal Resolution]
+        e[Investigation]
+
+        f1[No Charge]
+        f2[Charged]
+        f3[Non-Hearing Resolution]
+
+        g[Objections Reviewed by Outside Specialists]
+        h[No Findings of Responsibility]
+        i[Findings of Responsibility]
+        j[Either Party may appeal Outcome Letter]
+
+        l[Title IX contacts affected party after an secondhand report]
+        m[Report noted, no further action taken]
+
+        a --> b
+        b -.No.-> c
+        b -- No --> d
+        b -- Yes -->e
+
+        d --> e
+
+        l -- Affected responds --> b
+        l -- No responce or denial --> m
+        l -.No responce or denial.-> c
+        c -.-> e
+
+        e --> f1
+        e --> f2
+        e --> f3
+
+        f1 -.-> j
+        f2 --> g
+        g  --> h
+        g  --> i
+
+        h -.-> j
+        i -.-> j
+
+
+      </div>
+    </div>
+  
+    <script src="js/title-ix.js"></script>
+
+</body>
+</html>
